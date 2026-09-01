@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PustakaHub - Tambah Anggota</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>PustakaHub</h2>
+        <ul>
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../item/index.html">Koleksi Buku</a></li>
+            <li><a href="./index.html">Data Anggota</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h1>Tambah Anggota</h1>
+        <br>
+
+        <div class="form-container">
+            <h2>Form Data Anggota Baru</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Nama Lengkap</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Masukkan nama lengkap" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Simpan Data</button>
+                    <a href="./index.html" class="btn-cancel">Batal</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
