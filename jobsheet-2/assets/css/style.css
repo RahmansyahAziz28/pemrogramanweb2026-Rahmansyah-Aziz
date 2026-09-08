@@ -7,61 +7,66 @@
 body {
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     color: #1e293b;
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
+    line-height: 1.5;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
 .sidebar {
-    width: 250px;
-    background-color: #0f172a;
+    width: 100%;
+    background-color: #0f766e;
     color: #ffffff;
-    padding: 24px 20px;
-    flex-shrink: 0;
+    padding: 16px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .sidebar h2 {
     font-size: 20px;
     font-weight: 700;
-    color: #f8fafc;
+    color: #ffffff;
     letter-spacing: 0.5px;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #1e293b;
 }
 
 .sidebar ul {
     list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .sidebar ul li {
-    margin-bottom: 8px;
+    margin: 0;
 }
 
 .sidebar ul li a {
-    display: block;
-    color: #94a3b8;
+    display: inline-block;
+    color: #ccfbf1;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    padding: 10px 14px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 6px;
 }
 
 .sidebar ul li a:hover {
-    background-color: #1e293b;
-    color: #38bdf8;
-    transform: translateX(4px);
+    background-color: #115e59;
+    color: #ffffff;
 }
 
 .content {
     flex: 1;
-    background-color: #f1f5f9;
-    padding: 32px 40px;
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 24px;
 }
 
 .content h1 {
@@ -73,7 +78,7 @@ body {
 .content p {
     color: #64748b;
     font-size: 14px;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .content-header {
@@ -90,42 +95,34 @@ body {
 }
 
 .btn-add {
-    background-color: #2563eb;
+    background-color: #0d9488;
     color: #ffffff;
     padding: 10px 18px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-add:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-1px);
+    background-color: #0f766e;
 }
 
 .dashboard-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
     margin-top: 24px;
 }
 
 .card {
     background-color: #ffffff;
-    padding: 24px;
-    border-radius: 12px;
+    padding: 24px 28px;
+    border-radius: 8px;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
@@ -149,72 +146,75 @@ body {
 }
 
 .card.card-buku {
-    border-left: 4px solid #2563eb;
+    border-top: 4px solid #0d9488;
 }
 
 .card.card-buku .value {
-    color: #2563eb;
+    color: #0f766e;
 }
 
 .card.card-anggota {
-    border-left: 4px solid #0d9488;
+    border-top: 4px solid #0284c7;
 }
 
 .card.card-anggota .value {
-    color: #0d9488;
+    color: #0284c7;
 }
 
 .card.card-kategori {
-    border-left: 4px solid #ea580c;
+    border-top: 4px solid #f59e0b;
 }
 
 .card.card-kategori .value {
-    color: #ea580c;
+    color: #d97706;
 }
 
 .data-table {
     width: 100%;
     border-collapse: collapse;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .data-table thead {
-    background-color: #f8fafc;
-    border-bottom: 2px solid #e2e8f0;
+    background-color: #0f766e;
+    color: #ffffff;
 }
 
 .data-table th {
-    padding: 14px 18px;
+    padding: 14px 20px;
     text-align: left;
     font-size: 13px;
     font-weight: 600;
-    color: #475569;
-    text-transform: uppercase;
+    color: #ffffff;
     letter-spacing: 0.5px;
 }
 
 .data-table td {
-    padding: 14px 18px;
+    padding: 14px 20px;
     text-align: left;
     font-size: 14px;
-    color: #1e293b;
+    color: #334155;
     border-bottom: 1px solid #f1f5f9;
 }
 
-.data-table tbody tr:hover {
+.data-table tbody tr:nth-child(even) {
     background-color: #f8fafc;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f0fdfa;
 }
 
 .form-container {
     background-color: #ffffff;
-    padding: 28px;
-    border-radius: 12px;
+    padding: 32px;
+    border-radius: 8px;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     max-width: 600px;
 }
 
@@ -244,18 +244,17 @@ body {
     width: 100%;
     padding: 10px 14px;
     border: 1px solid #cbd5e1;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 14px;
     color: #1e293b;
     background-color: #ffffff;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     outline: none;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    border-color: #0d9488;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
 }
 
 .form-actions {
@@ -268,30 +267,29 @@ body {
 .btn-cancel {
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s ease;
 }
 
 .btn-save {
-    background-color: #16a34a;
+    background-color: #0d9488;
     color: #ffffff;
 }
 
 .btn-save:hover {
-    background-color: #15803d;
+    background-color: #0f766e;
 }
 
 .btn-cancel {
-    background-color: #64748b;
+    background-color: #94a3b8;
     color: #ffffff;
 }
 
 .btn-cancel:hover {
-    background-color: #475569;
+    background-color: #64748b;
 }
 
 .btn-edit,
@@ -303,7 +301,6 @@ body {
     font-size: 13px;
     font-weight: 500;
     color: #ffffff;
-    transition: background-color 0.2s ease;
 }
 
 .btn-edit {
@@ -321,4 +318,25 @@ body {
 
 .btn-delete:hover {
     background-color: #be123c;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        text-align: center;
+    }
+    .sidebar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .content {
+        padding: 24px 16px;
+    }
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
 }
