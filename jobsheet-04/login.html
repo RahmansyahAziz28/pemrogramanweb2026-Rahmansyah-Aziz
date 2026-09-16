@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMPUS-Mini | Login Petugas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .login-card {
+            max-width: 440px;
+            margin: 3rem auto;
+            background: #fff;
+            padding: 2.25rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .login-card h2 {
+            margin-bottom: 0.5rem;
+            color: #1d5b8a;
+            text-align: center;
+        }
+        .login-card .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1.75rem;
+        }
+        .login-card p {
+            margin-bottom: 1.25rem;
+        }
+        .login-card label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #334155;
+        }
+        .login-card input[type="text"],
+        .login-card input[type="password"] {
+            width: 100%;
+            padding: 0.65rem 0.85rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .login-card input[type="text"]:focus,
+        .login-card input[type="password"]:focus {
+            outline: none;
+            border-color: #1d5b8a;
+            box-shadow: 0 0 0 3px rgba(29, 91, 138, 0.15);
+        }
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        .remember-forgot label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: normal;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #1d5b8a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .btn-login:hover {
+            background-color: #164869;
+        }
+        .login-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SIMPUS-Mini</h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="buku/list.html">Daftar Buku</a></li>
+                <li><a href="anggota/list.html">Daftar Anggota</a></li>
+                <li><a href="login.html" style="font-weight: bold;">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-card">
+            <h2>Login Petugas</h2>
+            <p class="subtitle">Masuk untuk mengelola perpustakaan & transaksi</p>
+
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Login berhasil disimulasikan (HTML Statis)');">
+                <p>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username" required autocomplete="username">
+                </p>
+
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan password" required autocomplete="current-password">
+                </p>
+
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" name="remember"> Ingat Saya
+                    </label>
+                    <a href="#">Lupa Password?</a>
+                </div>
+
+                <p>
+                    <button type="submit" class="btn-login">Masuk</button>
+                </p>
+
+                <div class="login-footer">
+                    Belum punya akun petugas? <a href="#">Hubungi Administrator</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 4 (UI/UX)</p>
+    </footer>
+</body>
+</html>

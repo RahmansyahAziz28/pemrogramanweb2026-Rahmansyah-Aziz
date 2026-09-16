@@ -98,7 +98,40 @@ Halaman yang sudah ada (Beranda, Daftar/Tambah Buku, Daftar/Tambah Anggota — J
 +--------------------------------------+
 ```
 
+```
+
+## Wireframe: Registrasi Anggota Baru (Aktor Tamu)
+*(Ide Latihan Lanjutan)*
+
+```
++--------------------------------------+
+|       SIMPUS-Mini — Registrasi       |
+|--------------------------------------|
+|  Nama Lengkap : [__________________] |
+|  No. Identitas: [__________________] |
+|  Email        : [__________________] |
+|  No. HP       : [__________________] |
+|  Alamat       : [__________________] |
+|                                      |
+|          [ Daftar Sekarang ]         |
+|                                      |
+|    Sudah terdaftar? Hubungi Petugas  |
++--------------------------------------+
+```
+
+## User Flow — Penanganan Tunggakan Jatuh Tempo
+*(Ide Latihan Lanjutan)*
+
+```
+[Petugas Login] -> [Dashboard] -> [Menu "Monitoring Tunggakan"]
+        -> [Filter Status: "Lewat Jatuh Tempo"]
+        -> [Sistem tampilkan daftar anggota + total denda]
+        -> [Petugas klik "Kirim Pengingat" atau "Catat Pembayaran Denda"]
+        -> [Status tunggakan terbarui] -> [Dashboard]
+```
+
 ## Konsistensi dengan Desain yang Sudah Berjalan
 - Warna aksen, tipografi navbar, dan gaya tabel/kartu mengikuti `assets/css/style.css` yang sudah dibangun sejak Jobsheet 2-3.
 - Navbar akan ditambah menu **Peminjaman** dan indikator status login (nama petugas / tombol Logout) mulai implementasi di Jobsheet 10.
 - Edge case yang perlu ditangani saat implementasi: buku stok habis tidak boleh dipilih di form peminjaman; anggota dengan tunggakan terlambat divalidasi di Jobsheet 12 (tugas mandiri).
+- Implementasi statis halaman login tersedia di `login.html`.

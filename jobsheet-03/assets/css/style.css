@@ -243,3 +243,10 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Monitor Lebar / Ultra-wide (Ide Latihan Lanjutan) */
+@media (min-width: 1400px) {
+    main {
+        max-width: 1320px;
+    }
+}

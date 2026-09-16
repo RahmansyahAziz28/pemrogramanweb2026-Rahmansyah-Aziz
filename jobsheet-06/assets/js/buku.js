@@ -4,7 +4,7 @@ async function muatDaftarBuku() {
     const loading = document.getElementById("loading-indicator");
     if (!tbody) return;
 
-    loading.style.display = "block";
+    if (loading) loading.style.display = "block";
     tbody.innerHTML = "";
 
     try {
@@ -22,6 +22,7 @@ async function muatDaftarBuku() {
             tr.innerHTML =
                 "<td>" + buku.judul + "</td>" +
                 "<td>" + buku.pengarang + "</td>" +
+                "<td>" + (buku.kategori || "-") + "</td>" +
                 "<td>" + buku.tahun + "</td>" +
                 "<td>" + buku.stok + "</td>" +
                 "<td>" +
@@ -32,10 +33,20 @@ async function muatDaftarBuku() {
         });
     } catch (err) {
         tbody.innerHTML =
-            "<tr><td colspan=\"5\">Gagal memuat data: " + err.message + "</td></tr>";
+            "<tr><td colspan=\"6\">Gagal memuat data: " + err.message + "</td></tr>";
     } finally {
-        loading.style.display = "none";
+        if (loading) loading.style.display = "none";
     }
 }
 
-document.addEventListener("DOMContentLoaded", muatDaftarBuku);
+document.addEventListener("DOMContentLoaded", function () {
+    muatDaftarBuku();
+
+    // Pasang tombol reload data (Ide Latihan Lanjutan)
+    const btnReload = document.getElementById("btn-reload");
+    if (btnReload) {
+        btnReload.addEventListener("click", function () {
+            muatDaftarBuku();
+        });
+    }
+});

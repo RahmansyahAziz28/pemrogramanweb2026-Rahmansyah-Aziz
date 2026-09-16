@@ -217,6 +217,14 @@ footer {
     border-radius: 4px;
 }
 
+/* ===== Counter Baris Tabel ===== */
+.table-counter {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
 /* ===== Responsive Breakpoints ===== */
 
 /* Tablet ke bawah */
@@ -237,14 +245,20 @@ footer {
     }
 
     header nav {
-        display: none;
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
         width: 100%;
         order: 3;
-        margin-top: 1rem;
+        margin-top: 0;
+        transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.3s ease;
     }
 
     header nav.nav-open {
-        display: block;
+        max-height: 320px;
+        opacity: 1;
+        margin-top: 1rem;
     }
 
     header nav ul {

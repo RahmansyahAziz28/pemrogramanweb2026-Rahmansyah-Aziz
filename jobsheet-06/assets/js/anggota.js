@@ -4,7 +4,7 @@ async function muatDaftarAnggota() {
     const loading = document.getElementById("loading-indicator");
     if (!tbody) return;
 
-    loading.style.display = "block";
+    if (loading) loading.style.display = "block";
     tbody.innerHTML = "";
 
     try {
@@ -33,8 +33,18 @@ async function muatDaftarAnggota() {
         tbody.innerHTML =
             "<tr><td colspan=\"5\">Gagal memuat data: " + err.message + "</td></tr>";
     } finally {
-        loading.style.display = "none";
+        if (loading) loading.style.display = "none";
     }
 }
 
-document.addEventListener("DOMContentLoaded", muatDaftarAnggota);
+document.addEventListener("DOMContentLoaded", function () {
+    muatDaftarAnggota();
+
+    // Pasang tombol reload data (Ide Latihan Lanjutan)
+    const btnReload = document.getElementById("btn-reload");
+    if (btnReload) {
+        btnReload.addEventListener("click", function () {
+            muatDaftarAnggota();
+        });
+    }
+});
