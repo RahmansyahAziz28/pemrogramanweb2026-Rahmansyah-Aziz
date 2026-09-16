@@ -4,51 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-Mini | Beranda</title>
+    <title>Arsip Kriminal - Pusat Investigasi Kejahatan Gotham</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <h1>SIMPUS-Mini</h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <a href="index.html" class="brand-container">
+            <span class="brand-badge">GOTHAM</span>
+            <span class="brand-title">Arsip Kriminal</span>
+            <span class="brand-subtitle">Investigasi Kejahatan</span>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="buku/list.html">Daftar Buku</a></li>
-                <li><a href="buku/tambah.html">Tambah Buku</a></li>
-                <li><a href="anggota/list.html">Daftar Anggota</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="buku/list.html">Berkas Perkara</a></li>
+                <li><a href="buku/tambah.html">Tambah Perkara</a></li>
+                <li><a href="anggota/list.html">Personel Detektif</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
-            <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
-        </section>
+        <div class="page-banner">
+            <div class="page-banner-info">
+                <h1>Pusat Investigasi Kejahatan Gotham</h1>
+                <p>Sistem dokumentasi perkara pidana, pemetaan profil ancaman, dan koordinasi detektif lapangan.</p>
+            </div>
+            <div class="page-banner-actions">
+                <a href="buku/tambah.html" class="btn-primary">+ Input Perkara Baru</a>
+                <a href="anggota/list.html" class="btn-secondary">Direktori Detektif</a>
+            </div>
+        </div>
 
-        <section>
-            <h2 style="grid-column: 1 / -1;">Ringkasan</h2>
-            <article>
-                <h3>Total Buku</h3>
-                <p>12</p>
-            </article>
-            <article>
-                <h3>Total Anggota</h3>
-                <p>8</p>
-            </article>
-            <article>
-                <h3>Sedang Dipinjam</h3>
-                <p>3</p>
-            </article>
-        </section>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-title">Total Berkas Aktif</span>
+                <span class="stat-number">48</span>
+                <span class="stat-detail">12 perkara dalam penyelidikan intensif</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Personel Detektif</span>
+                <span class="stat-number">16</span>
+                <span class="stat-detail">Siaga di lima distrik kepolisian</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Pelaku Diamankan</span>
+                <span class="stat-number">32</span>
+                <span class="stat-detail">Fasilitas Arkham dan Blackgate</span>
+            </div>
+        </div>
+
+        <div class="card-panel">
+            <div class="card-panel-header">
+                <h2>Perkara Prioritas Terkini</h2>
+                <span>Pembaruan patroli 24 jam terakhir</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nomor Perkara</th>
+                            <th>Nama Subjek</th>
+                            <th>Klasifikasi Modus</th>
+                            <th>Status Penanganan</th>
+                            <th>Tindakan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PK-2022-014</strong></td>
+                            <td>Edward Nashton (The Riddler)</td>
+                            <td>Terorisme dan Sabotase Kota</td>
+                            <td><span class="status-tag tag-red">Buron Prioritas</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="buku/list.html" class="btn-table">Detail</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>PK-2021-089</strong></td>
+                            <td>Oswald Cobblepot (The Penguin)</td>
+                            <td>Sindikat Penyelundupan Senjata</td>
+                            <td><span class="status-tag tag-amber">Dalam Pengawasan</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="buku/list.html" class="btn-table">Detail</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>PK-2022-031</strong></td>
+                            <td>Selina Kyle (Catwoman)</td>
+                            <td>Pencurian Dokumen Rahasia</td>
+                            <td><span class="status-tag tag-blue">Penyelidikan Terbuka</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="buku/list.html" class="btn-table">Detail</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>PK-2020-112</strong></td>
+                            <td>Carmine Falcone</td>
+                            <td>Pemerasan dan Kejahatan Terorganisir</td>
+                            <td><span class="status-tag tag-green">Tercatat di Pengadilan</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="buku/list.html" class="btn-table">Detail</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 3</p>
+        <p>&copy; 2026 Kepolisian Kota Gotham - Divisi Reserse Kriminal. Jobsheet 4.</p>
     </footer>
 </body>
 

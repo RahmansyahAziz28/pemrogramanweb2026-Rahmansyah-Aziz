@@ -1,137 +1,78 @@
-# Wireframe & User Flow — SIMPUS-Mini
+# Dokumentasi Perancangan UI/UX - Arsip Kriminal Kota Gotham
 
-Sub-CPMK: Merancang UI/UX aplikasi (proyek).
+Sub-CPMK: Merancang antarmuka dan alur pengguna sistem investigasi kriminal berbasis web.
 
-Halaman yang sudah ada (Beranda, Daftar/Tambah Buku, Daftar/Tambah Anggota — Jobsheet 1-3) belum mencakup fitur Login, Dashboard Petugas, dan Peminjaman/Pengembalian. Dokumen ini merancang wireframe untuk halaman-halaman tersebut sebelum diimplementasikan mulai Jobsheet 5 dan seterusnya.
+Dokumen ini memuat perancangan wireframe dan alur pengguna untuk sistem dokumentasi tindak pidana kepolisian Kota Gotham, yang mencakup modul Beranda Operasional, Berkas Perkara, Pendaftaran Perkara, dan Direktori Detektif.
 
-## Aktor
-- **Tamu**: hanya bisa melihat katalog buku (Beranda, Daftar Buku) tanpa login.
-- **Petugas**: login untuk mengakses seluruh fitur CRUD dan transaksi peminjaman.
+## Peran Pengguna
+- Publik: Dapat melihat ringkasan pengumuman perkara terbuka dan informasi umum.
+- Detektif dan Perwira Investigasi: Memiliki otorisasi untuk menginput data perkara, memperbarui profil ancaman, dan mengelola penugasan personel.
 
-## User Flow — Peminjaman Buku
-
-```
-[Petugas Login] -> [Dashboard] -> [Pilih menu "Peminjaman Baru"]
-        -> [Pilih Anggota] -> [Pilih Buku (stok > 0)]
-        -> [Simpan] -> [Stok buku berkurang 1] -> [Kembali ke Dashboard]
-```
-
-## User Flow — Pengembalian Buku
+## Alur Pengguna: Pendaftaran Perkara Pidana Baru
 
 ```
-[Dashboard] -> [Menu "Pengembalian"] -> [Cari transaksi aktif (anggota/buku)]
-        -> [Tandai "Dikembalikan"] -> [Stok buku bertambah 1]
-        -> [Kembali ke Dashboard]
+[Halaman Beranda] -> [Pilih tombol "Tambah Perkara"]
+        -> [Mengisi Nama Subjek, Alias, dan Nomor Perkara]
+        -> [Menentukan Klasifikasi Kejahatan dan Tingkat Ancaman]
+        -> [Menyimpan Berkas] -> [Tercatat pada Arsip Aktif]
 ```
 
-## Wireframe: Halaman Login
+## Alur Pengguna: Penugasan Personel Detektif
 
 ```
-+--------------------------------------+
-|              SIMPUS-Mini             |
-|--------------------------------------|
-|                                      |
-|        [ Login Petugas ]            |
-|                                      |
-|   Username : [______________]       |
-|   Password : [______________]       |
-|                                      |
-|          [   Masuk   ]              |
-|                                      |
-|   Belum punya akun? Daftar di sini  |
-+--------------------------------------+
+[Halaman Beranda] -> [Masuk Menu "Personel Detektif"]
+        -> [Melihat Daftar Detektif dan Status Dinas]
+        -> [Pilih Detektif yang Bertugas]
+        -> [Perbarui Wilayah Penugasan dan Kanal Komunikasi]
+        -> [Simpan Pembaruan Data]
 ```
 
-## Wireframe: Dashboard Petugas
+## Wireframe: Pusat Investigasi Kejahatan (Beranda)
 
 ```
-+-----------------------------------------------------+
-| SIMPUS-Mini      Beranda | Buku | Anggota | Peminjaman | (Nama Petugas) Logout |
-|-------------------------------------------------------|
-|  [Total Buku]   [Total Anggota]   [Sedang Dipinjam]    |
-|                                                         |
-|  Aksi Cepat:                                           |
-|  [ + Peminjaman Baru ]   [ + Pengembalian ]            |
-|                                                         |
-|  Transaksi Terbaru                                     |
-|  --------------------------------------------------    |
-|  Anggota | Buku | Tgl Pinjam | Status                  |
-+-----------------------------------------------------+
++-------------------------------------------------------------+
+| [GOTHAM] Arsip Kriminal    Beranda | Perkara | Personel     |
+|-------------------------------------------------------------|
+| Pusat Investigasi Kejahatan Gotham                          |
+| [ + Input Perkara Baru ]   [ Direktori Detektif ]           |
+|                                                             |
+| [ 48 Berkas Aktif ]    [ 16 Detektif ]    [ 32 Ditahan ]    |
+|                                                             |
+| Perkara Prioritas Terkini                                   |
+| Nomor Perkara | Nama Subjek       | Status       | Aksi     |
+| PK-2022-014   | Edward Nashton    | [Kritis]     | [Detail] |
+| PK-2021-089   | Oswald Cobblepot  | [Tinggi]     | [Detail] |
++-------------------------------------------------------------+
 ```
 
-## Wireframe: Form Peminjaman
+## Wireframe: Daftar Berkas Perkara Kriminal
 
 ```
-+--------------------------------------+
-|  Form Peminjaman Buku                |
-|--------------------------------------|
-|  Anggota : [ dropdown pilih anggota ]|
-|  Buku    : [ dropdown, hanya stok>0 ]|
-|  Tanggal Pinjam : [ auto: hari ini ] |
-|                                      |
-|          [  Simpan Peminjaman  ]    |
-+--------------------------------------+
++-------------------------------------------------------------+
+| Daftar Berkas Perkara Kriminal                              |
+| [ + Input Perkara Baru ]                                    |
+|                                                             |
+| Nomor       | Subjek          | Klasifikasi  | Ancaman| Aksi|
+| PK-2022-014 | Edward Nashton  | Terorisme    | Kritis | [..]|
+| PK-2021-089 | Oswald Cobblepot| Penyelundupan| Tinggi | [..]|
++-------------------------------------------------------------+
 ```
 
-## Wireframe: Form Pengembalian
+## Wireframe: Direktori Personel Detektif
 
 ```
-+--------------------------------------+
-|  Pengembalian Buku                   |
-|--------------------------------------|
-|  Cari transaksi aktif:               |
-|  [ nama anggota / judul buku ______ ]|
-|                                      |
-|  Anggota | Buku | Tgl Pinjam | [Kembalikan] |
-+--------------------------------------+
++-------------------------------------------------------------+
+| Direktori Personel Detektif Gotham                          |
+| [ + Tambah Personel Baru ]                                  |
+|                                                             |
+| Lencana   | Nama Detektif   | Satuan Wilayah | Kanal  | Aksi|
+| LNC-001   | James Gordon    | Satuan Utama   | 142.50 | [..]|
+| LNC-007   | Harvey Bullock  | Kejahatan Berat| 142.75 | [..]|
++-------------------------------------------------------------+
 ```
 
-## Wireframe: Riwayat Peminjaman per Anggota
-
-```
-+--------------------------------------+
-|  Riwayat Peminjaman — Siti Aminah    |
-|--------------------------------------|
-|  Buku            | Pinjam   | Kembali | Status      |
-|  Laskar Pelangi   | 01/07    | 10/07   | Selesai     |
-|  Bumi Manusia      | 15/07    | -       | Dipinjam    |
-+--------------------------------------+
-```
-
-```
-
-## Wireframe: Registrasi Anggota Baru (Aktor Tamu)
-*(Ide Latihan Lanjutan)*
-
-```
-+--------------------------------------+
-|       SIMPUS-Mini — Registrasi       |
-|--------------------------------------|
-|  Nama Lengkap : [__________________] |
-|  No. Identitas: [__________________] |
-|  Email        : [__________________] |
-|  No. HP       : [__________________] |
-|  Alamat       : [__________________] |
-|                                      |
-|          [ Daftar Sekarang ]         |
-|                                      |
-|    Sudah terdaftar? Hubungi Petugas  |
-+--------------------------------------+
-```
-
-## User Flow — Penanganan Tunggakan Jatuh Tempo
-*(Ide Latihan Lanjutan)*
-
-```
-[Petugas Login] -> [Dashboard] -> [Menu "Monitoring Tunggakan"]
-        -> [Filter Status: "Lewat Jatuh Tempo"]
-        -> [Sistem tampilkan daftar anggota + total denda]
-        -> [Petugas klik "Kirim Pengingat" atau "Catat Pembayaran Denda"]
-        -> [Status tunggakan terbarui] -> [Dashboard]
-```
-
-## Konsistensi dengan Desain yang Sudah Berjalan
-- Warna aksen, tipografi navbar, dan gaya tabel/kartu mengikuti `assets/css/style.css` yang sudah dibangun sejak Jobsheet 2-3.
-- Navbar akan ditambah menu **Peminjaman** dan indikator status login (nama petugas / tombol Logout) mulai implementasi di Jobsheet 10.
-- Edge case yang perlu ditangani saat implementasi: buku stok habis tidak boleh dipilih di form peminjaman; anggota dengan tunggakan terlambat divalidasi di Jobsheet 12 (tugas mandiri).
-- Implementasi statis halaman login tersedia di `login.html`.
+## Pedoman Tampilan Visual
+- Warna Utama: Merah Pekat Solid (#e50914) untuk aksen border, tombol tindakan, dan penanda penting.
+- Latar Belakang: Hitam Gelap (#0a0a0d) dan Abu Arang Gelap (#121217).
+- Tanpa Gradasi: Seluruh pewarnaan menggunakan warna datar (solid color) untuk menjaga kontras tinggi dan ketegasan visual.
+- Implementasi Berkas: Halaman statis terhubung pada index.html, buku/list.html, buku/tambah.html, dan anggota/list.html.

@@ -1,67 +1,106 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-Mini | Tambah Buku</title>
+    <title>Arsip Kriminal - Pendaftaran Perkara Baru</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>SIMPUS-Mini</h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <a href="../index.html" class="brand-container">
+            <span class="brand-badge">GOTHAM</span>
+            <span class="brand-title">Arsip Kriminal</span>
+            <span class="brand-subtitle">Investigasi Kejahatan</span>
+        </a>
         <nav>
             <ul>
                 <li><a href="../index.html">Beranda</a></li>
-                <li><a href="list.html">Daftar Buku</a></li>
-                <li><a href="tambah.html">Tambah Buku</a></li>
-                <li><a href="../anggota/list.html">Daftar Anggota</a></li>
+                <li><a href="list.html">Berkas Perkara</a></li>
+                <li><a href="tambah.html" class="active">Tambah Perkara</a></li>
+                <li><a href="../anggota/list.html">Personel Detektif</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Tambah Buku</h2>
-            <form>
-                <p>
-                    <label for="judul">Judul</label><br>
-                    <input type="text" id="judul" name="judul" required>
-                </p>
-                <p>
-                    <label for="pengarang">Pengarang</label><br>
-                    <input type="text" id="pengarang" name="pengarang" required>
-                </p>
-                <p>
-                    <label for="tahun">Tahun Terbit</label><br>
-                    <input type="number" id="tahun" name="tahun" min="1900" max="2026" required>
-                </p>
-                <p>
-                    <label for="isbn">ISBN</label><br>
-                    <input type="text" id="isbn" name="isbn">
-                </p>
-                <p>
-                    <label for="stok">Stok</label><br>
-                    <input type="number" id="stok" name="stok" min="0" required>
-                </p>
-                <p>
-                    <label for="kategori">Kategori</label><br>
-                    <select id="kategori" name="kategori">
-                        <option value="fiksi">Fiksi</option>
-                        <option value="non-fiksi">Non-Fiksi</option>
-                        <option value="referensi">Referensi</option>
-                    </select>
-                </p>
-                <p>
-                    <button type="submit">Simpan</button>
-                </p>
+        <div class="page-banner">
+            <div class="page-banner-info">
+                <h1>Pendaftaran Perkara Pidana Baru</h1>
+                <p>Lengkapi formulir registrasi data pelaku, klasifikasi kejahatan, dan catatan penyelidikan awal.</p>
+            </div>
+            <div class="page-banner-actions">
+                <a href="list.html" class="btn-secondary">Kembali ke Daftar</a>
+            </div>
+        </div>
+
+        <div class="card-panel">
+            <div class="card-panel-header">
+                <h2>Formulir Identifikasi Perkara</h2>
+                <span>Bidang bertanda bintang wajib diisi</span>
+            </div>
+
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Berkas perkara berhasil didaftarkan ke sistem arsip kepolisian');">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="judul" class="form-label">Nama Subjek / Terlapor *</label>
+                        <input type="text" id="judul" name="judul" class="form-input" placeholder="Contoh: Jonathan Crane" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pengarang" class="form-label">Alias atau Sebutan Lapangan *</label>
+                        <input type="text" id="pengarang" name="pengarang" class="form-input" placeholder="Contoh: The Scarecrow" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isbn" class="form-label">Nomor Registrasi Perkara</label>
+                        <input type="text" id="isbn" name="isbn" class="form-input" placeholder="Contoh: PK-2026-052">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tahun" class="form-label">Tahun Perkara *</label>
+                        <input type="number" id="tahun" name="tahun" class="form-input" min="1900" max="2026" value="2026" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kategori" class="form-label">Klasifikasi Kejahatan *</label>
+                        <select id="kategori" name="kategori" class="form-select">
+                            <option value="terorisme">Terorisme dan Sabotase</option>
+                            <option value="mafia">Sindikat Kejahatan Terorganisir</option>
+                            <option value="pencurian">Pencurian Bernilai Tinggi</option>
+                            <option value="penipuan">Korupsi dan Pencucian Uang</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stok" class="form-label">Tingkat Ancaman Wilayah *</label>
+                        <select id="stok" name="stok" class="form-select">
+                            <option value="4">Tingkat Kritis</option>
+                            <option value="3">Ancaman Tinggi</option>
+                            <option value="2">Pengawasan Taktis</option>
+                            <option value="1">Resiko Rendah</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <label for="catatan" class="form-label">Ringkasan Bukti dan Catatan Penyelidikan</label>
+                        <textarea id="catatan" name="catatan" class="form-textarea" placeholder="Tuliskan keterangan tempat kejadian perkara, saksi, dan indikasi awal..."></textarea>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" class="btn-primary">Simpan Berkas Perkara</button>
+                        <a href="list.html" class="btn-secondary">Batalkan</a>
+                    </div>
+                </div>
             </form>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 3</p>
+        <p>&copy; 2026 Kepolisian Kota Gotham - Divisi Reserse Kriminal. Jobsheet 4.</p>
     </footer>
 </body>
+
 </html>

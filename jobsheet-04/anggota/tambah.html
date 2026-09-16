@@ -1,55 +1,106 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-Mini | Tambah Anggota</title>
+    <title>Arsip Kriminal - Registrasi Personel Detektif Gotham</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>SIMPUS-Mini</h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <a href="../index.html" class="brand-container">
+            <span class="brand-badge">GOTHAM</span>
+            <span class="brand-title">Arsip Kriminal</span>
+            <span class="brand-subtitle">Investigasi Kejahatan</span>
+        </a>
         <nav>
             <ul>
                 <li><a href="../index.html">Beranda</a></li>
-                <li><a href="../buku/list.html">Daftar Buku</a></li>
-                <li><a href="list.html">Daftar Anggota</a></li>
-                <li><a href="tambah.html">Tambah Anggota</a></li>
+                <li><a href="../buku/list.html">Berkas Perkara</a></li>
+                <li><a href="../buku/tambah.html">Tambah Perkara</a></li>
+                <li><a href="list.html">Personel Detektif</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Tambah Anggota</h2>
-            <form>
-                <p>
-                    <label for="nama">Nama</label><br>
-                    <input type="text" id="nama" name="nama" required>
-                </p>
-                <p>
-                    <label for="no_anggota">No. Anggota</label><br>
-                    <input type="text" id="no_anggota" name="no_anggota" required>
-                </p>
-                <p>
-                    <label for="alamat">Alamat</label><br>
-                    <input type="text" id="alamat" name="alamat">
-                </p>
-                <p>
-                    <label for="no_hp">No. HP</label><br>
-                    <input type="text" id="no_hp" name="no_hp">
-                </p>
-                <p>
-                    <button type="submit">Simpan</button>
-                </p>
+        <div class="page-banner">
+            <div class="page-banner-info">
+                <h1>Pendaftaran Personel Detektif Baru</h1>
+                <p>Lengkapi formulir penugasan dinas, nomor lencana resmi, dan jalur koordinasi komunikasi.</p>
+            </div>
+            <div class="page-banner-actions">
+                <a href="list.html" class="btn-secondary">Kembali ke Direktori</a>
+            </div>
+        </div>
+
+        <div class="card-panel">
+            <div class="card-panel-header">
+                <h2>Formulir Registrasi Personel</h2>
+                <span>Bidang bertanda bintang wajib diisi</span>
+            </div>
+
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Data personel detektif berhasil didaftarkan ke sistem arsip kepolisian');">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nama" class="form-label">Nama Lengkap Personel *</label>
+                        <input type="text" id="nama" name="nama" class="form-input" placeholder="Contoh: Harvey Bullock" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="no_anggota" class="form-label">Nomor Lencana Resmi *</label>
+                        <input type="text" id="no_anggota" name="no_anggota" class="form-input" placeholder="Contoh: LNC-007" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat" class="form-label">Satuan Divisi dan Wilayah *</label>
+                        <input type="text" id="alamat" name="alamat" class="form-input" placeholder="Contoh: Unit Kejahatan Terorganisir, Gotham Pusat" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="no_hp" class="form-label">Kanal Frekuensi Radio *</label>
+                        <input type="text" id="no_hp" name="no_hp" class="form-input" placeholder="Contoh: Kanal 142.75 MHz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status_dinas" class="form-label">Status Penugasan *</label>
+                        <select id="status_dinas" name="status_dinas" class="form-select">
+                            <option value="aktif">Dinas Aktif</option>
+                            <option value="operasi">Operasi Khusus</option>
+                            <option value="patroli">Patroli Sektor</option>
+                            <option value="cadangan">Cadangan Siaga</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pangkat" class="form-label">Pangkat Kepolisian</label>
+                        <select id="pangkat" name="pangkat" class="form-select">
+                            <option value="detektif">Detektif Kelas 1</option>
+                            <option value="inspektur">Inspektur Polisi</option>
+                            <option value="letnan">Letnan Detektif</option>
+                            <option value="kapten">Kapten Satuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <label for="catatan_personel" class="form-label">Catatan Rekam Jejak dan Pelatihan Taktis</label>
+                        <textarea id="catatan_personel" name="catatan_personel" class="form-textarea" placeholder="Tuliskan riwayat penanganan kasus besar atau sertifikasi khusus personel..."></textarea>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" class="btn-primary">Daftarkan Personel</button>
+                        <a href="list.html" class="btn-secondary">Batalkan</a>
+                    </div>
+                </div>
             </form>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 3</p>
+        <p>&copy; 2026 Kepolisian Kota Gotham - Divisi Reserse Kriminal. Jobsheet 4.</p>
     </footer>
 </body>
+
 </html>
