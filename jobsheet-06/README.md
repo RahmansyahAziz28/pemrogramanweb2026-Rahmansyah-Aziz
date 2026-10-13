@@ -1,21 +1,19 @@
-# Jobsheet 6 — Fetch API & JSON
+# Jobsheet 6 — Fetch API & JSON (Crime Records System)
 
-Sub-CPMK: Menerapkan komunikasi asinkron (AJAX/fetch, JSON).
+Sub-CPMK: Menerapkan komunikasi asinkron (AJAX/Fetch API, JSON).
 
-## Perubahan dari Jobsheet 5
-- Tambah `data/buku.json` (10 objek) dan `data/anggota.json` (4 objek) sebagai pengganti sementara API sungguhan.
-- `buku/list.html` & `anggota/list.html`: `<tbody>` dikosongkan, baris kini dirender dinamis oleh `assets/js/buku.js` / `assets/js/anggota.js` menggunakan `fetch` + `async/await`.
-- Loading indicator (`#loading-indicator`) tampil selama proses fetch (disimulasikan dengan delay 600ms).
-- Penanganan error (`try/catch`) menampilkan pesan di dalam tabel bila fetch gagal.
-- `app.js`: `initHapusConfirm` diubah ke **event delegation** (`document.addEventListener("click", ...)`) karena tombol Hapus sekarang berada di baris yang dibuat setelah halaman selesai dimuat.
+## Penyesuaian Tema & Fitur
+- **Tema:** Crime Records System (Gotham City Police Department) — Modul Berkas Tersangka (*Suspects*) dan Direktori Penyidik (*Investigators*).
+- **Sumber Data JSON:** Menggunakan berkas [data/suspects.json](data/suspects.json) (8 arsip tersangka) dan [data/investigators.json](data/investigators.json) (5 personel penyidik).
+- **Asynchronous Rendering:** Elemen `<tbody>` pada `suspects/list.html` dan `investigators/list.html` dikosongkan dari HTML statis, lalu dirender secara dinamis oleh [assets/js/suspects.js](assets/js/suspects.js) dan [assets/js/investigators.js](assets/js/investigators.js) menggunakan sintaks modern `fetch()` dan `async/await`.
+- **Indikator Loading & Error Handling:** Menampilkan status *loading* (`#loading-indicator`) dengan simulasi latensi (600ms) serta penanganan kesalahan (`try...catch`) bila pengambilan data gagal.
+- **Tombol Muat Ulang (*Reload*):** Fitur `#btn-reload` untuk memuat ulang data dari JSON tanpa me-refresh seluruh halaman.
+- **Event Delegation:** Tombol hapus ditangani dengan mekanisme delegasi event pada dokumen untuk elemen-elemen baris tabel yang dibuat secara dinamis setelah fetch selesai.
 
-## Cara menjalankan
-**Penting:** `fetch()` ke file lokal akan diblokir kebijakan CORS jika dibuka langsung dengan `file://`. Jalankan lewat server lokal, misalnya:
+## Cara Menjalankan
+Karena peramban memblokir permintaan `fetch()` ke file lokal melalui protokol `file://` (kebijakan CORS), jalankan menggunakan web server lokal:
 ```bash
 php -S localhost:8000
 ```
-lalu buka `http://localhost:8000/index.html`. Bisa juga memakai ekstensi "Live Server" di VSCode.
-
-## Catatan
-- Uji error handling dengan mengganti sementara nama file di `fetch(...)` menjadi nama yang salah.
-- Pola `fetch` + `async/await` di sini akan dipakai ulang untuk memanggil endpoint PHP sungguhan mulai Jobsheet 9 (setelah back-end PostgreSQL siap di Jobsheet 8), meskipun mulai Jobsheet 7 rendering utama berpindah ke server-side PHP.
+atau gunakan ekstensi **Live Server** di VS Code, lalu buka tautan di browser:
+`http://localhost:8000/jobsheet-06/index.html`

@@ -1,4 +1,3 @@
-// ===== Hamburger menu (JS-driven, menggantikan checkbox hack) =====
 function initNavToggle() {
     const toggleBtn = document.getElementById("nav-toggle-btn");
     const nav = document.querySelector("header nav");
@@ -9,25 +8,20 @@ function initNavToggle() {
     });
 }
 
-// ===== Konfirmasi hapus (front-end only, belum ke server) =====
-// Memakai event delegation di document karena baris tabel sekarang
-// dirender dinamis via fetch (lihat buku.js/anggota.js) sehingga
-// tombol .btn-hapus belum tentu ada saat DOMContentLoaded.
 function initHapusConfirm() {
     document.addEventListener("click", function (e) {
         const btn = e.target.closest(".btn-hapus");
         if (!btn) return;
 
         const row = btn.closest("tr");
-        const nama = row ? row.querySelector("td")?.textContent : "data ini";
-        const yakin = confirm("Yakin ingin menghapus \"" + nama + "\"?");
+        const nama = row ? (row.querySelector("strong")?.textContent || row.querySelector("td")?.textContent) : "entri ini";
+        const yakin = confirm("Yakin ingin menghapus arsip data \"" + nama + "\"?");
         if (yakin && row) {
             row.remove();
         }
     });
 }
 
-// ===== Filter/pencarian tabel real-time =====
 function initTableFilter() {
     const input = document.getElementById("search-input");
     const table = document.querySelector(".table-responsive table");
@@ -43,7 +37,6 @@ function initTableFilter() {
     });
 }
 
-// ===== Validasi form (client-side) =====
 function tampilkanError(input, pesan) {
     hapusError(input);
     const span = document.createElement("span");
@@ -66,41 +59,32 @@ function initValidasiForm() {
     form.addEventListener("submit", function (e) {
         let valid = true;
 
-        const judul = form.querySelector("[name='judul'], [name='nama']");
-        if (judul && judul.value.trim() === "") {
-            tampilkanError(judul, "Field ini wajib diisi.");
+        const fullName = form.querySelector("[name='full_name']");
+        if (fullName && fullName.value.trim() === "") {
+            tampilkanError(fullName, "Nama lengkap wajib diisi.");
             valid = false;
-        } else if (judul) {
-            hapusError(judul);
+        } else if (fullName) {
+            hapusError(fullName);
         }
 
-        const pengarang = form.querySelector("[name='pengarang']");
-        if (pengarang && pengarang.value.trim() === "") {
-            tampilkanError(pengarang, "Pengarang wajib diisi.");
+        const idNumber = form.querySelector("[name='identification_number']");
+        if (idNumber && idNumber.value.trim() === "") {
+            tampilkanError(idNumber, "Nomor identitas tersangka wajib diisi.");
             valid = false;
-        } else if (pengarang) {
-            hapusError(pengarang);
+        } else if (idNumber) {
+            hapusError(idNumber);
         }
 
-        const tahun = form.querySelector("[name='tahun']");
-        if (tahun) {
-            const nilai = parseInt(tahun.value, 10);
-            if (isNaN(nilai) || nilai < 1900 || nilai > 2026) {
-                tampilkanError(tahun, "Tahun harus di antara 1900-2026.");
+
+
+        const email = form.querySelector("[name='email']");
+        if (email && email.value.trim() !== "") {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value.trim())) {
+                tampilkanError(email, "Format email tidak valid.");
                 valid = false;
             } else {
-                hapusError(tahun);
-            }
-        }
-
-        const stok = form.querySelector("[name='stok']");
-        if (stok) {
-            const nilai = parseInt(stok.value, 10);
-            if (isNaN(nilai) || nilai < 0) {
-                tampilkanError(stok, "Stok tidak boleh negatif.");
-                valid = false;
-            } else {
-                hapusError(stok);
+                hapusError(email);
             }
         }
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crime Records | Daftar Penyidik</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><span>Crime Records System</span></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="../suspects/list.html">Daftar Tersangka</a></li>
+                <li><a href="../suspects/tambah.html">Tambah Tersangka</a></li>
+                <li><a href="list.html" class="active">Daftar Penyidik</a></li>
+                <li><a href="../login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Direktori Penyidik &amp; Detektif</h2>
+            <div class="toolbar">
+                <div class="search-box">
+                    <label for="search-input">Cari Data Penyidik</label>
+                    <input type="text" id="search-input" placeholder="Ketik nama, lencana, divisi...">
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. Lencana</th>
+                            <th>Nama Lengkap</th>
+                            <th>Pangkat</th>
+                            <th>Departemen</th>
+                            <th>Telepon</th>
+                            <th>Email Resmi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-gold">GPD-001</span></td>
+                            <td><strong>James Gordon</strong></td>
+                            <td><span class="badge-tag">Commissioner</span></td>
+                            <td>Major Crimes Unit</td>
+                            <td>555-0101</td>
+                            <td>gordon@gpd.gotham.gov</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn-action">Edit</button>
+                                    <button type="button" class="btn-hapus">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gold">GPD-002</span></td>
+                            <td><strong>Harvey Bullock</strong></td>
+                            <td><span class="badge-tag">Detective</span></td>
+                            <td>Major Crimes Unit</td>
+                            <td>555-0102</td>
+                            <td>bullock@gpd.gotham.gov</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn-action">Edit</button>
+                                    <button type="button" class="btn-hapus">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gold">GPD-003</span></td>
+                            <td><strong>Renee Montoya</strong></td>
+                            <td><span class="badge-tag">Detective</span></td>
+                            <td>Special Crimes Unit</td>
+                            <td>555-0103</td>
+                            <td>montoya@gpd.gotham.gov</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn-action">Edit</button>
+                                    <button type="button" class="btn-hapus">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gold">GPD-004</span></td>
+                            <td><strong>Crispus Allen</strong></td>
+                            <td><span class="badge-tag">Detective</span></td>
+                            <td>Special Crimes Unit</td>
+                            <td>555-0104</td>
+                            <td>allen@gpd.gotham.gov</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn-action">Edit</button>
+                                    <button type="button" class="btn-hapus">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gold">GPD-005</span></td>
+                            <td><strong>Sarah Essen</strong></td>
+                            <td><span class="badge-tag">Captain</span></td>
+                            <td>Organized Crime Unit</td>
+                            <td>555-0105</td>
+                            <td>essen@gpd.gotham.gov</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn-action">Edit</button>
+                                    <button type="button" class="btn-hapus">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gotham City Police Department  (Jobsheet 4)</p>
+    </footer>
+</body>
+
+</html>

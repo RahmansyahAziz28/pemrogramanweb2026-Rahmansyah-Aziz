@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crime Records | Tambah Tersangka</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><span>Crime Records System</span></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html">Daftar Tersangka</a></li>
+                <li><a href="tambah.html" class="active">Tambah Tersangka</a></li>
+                <li><a href="../investigators/list.html">Daftar Penyidik</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Registrasi Berkas Tersangka Baru</h2>
+            <form id="form-tambah" action="list.html" method="get">
+                <div class="form-group">
+                    <label for="identification_number">Nomor Identitas (ID Polisi / Dokumen)</label>
+                    <input type="text" id="identification_number" name="identification_number" placeholder="Contoh: GTH-ID-99210" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="full_name">Nama Lengkap / Alias</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Masukkan nama lengkap tersangka" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date_of_birth">Tanggal Lahir</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Jenis Kelamin</label>
+                    <select id="gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Alamat / Lokasi Terakhir Terlihat</label>
+                    <textarea id="address" name="address" placeholder="Masukkan alamat atau lokasi terakhir..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Simpan Berkas</button>
+                    <a href="list.html" class="btn-secondary">Kembali</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gotham City Police Department  (Jobsheet 3)</p>
+    </footer>
+</body>
+
+</html>

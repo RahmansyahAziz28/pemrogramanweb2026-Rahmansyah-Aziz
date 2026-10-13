@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-Mini | Beranda</title>
+    <title> Crime Records | Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>SIMPUS-Mini</h1>
+        <h1> <span>Crime Records System</span></h1>
         <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
         <nav>
             <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="buku/list.html">Daftar Buku</a></li>
-                <li><a href="buku/tambah.html">Tambah Buku</a></li>
-                <li><a href="anggota/list.html">Daftar Anggota</a></li>
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="suspects/list.html">Daftar Tersangka</a></li>
+                <li><a href="suspects/tambah.html">Tambah Tersangka</a></li>
+                <li><a href="investigators/list.html">Daftar Penyidik</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
-            <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
+            <h2>Pusat Basis Data Kejahatan Gotham City</h2>
+            <p class="hero-subtitle">Sistem manajemen arsip tersangka dan direktori resmi penyidik Gotham City Police
+                Department.</p>
+
+            <div class="stats-grid">
+                <article class="stats-card">
+                    <h3>Total Tersangka Terdata</h3>
+                    <p>8</p>
+                </article>
+                <article class="stats-card">
+                    <h3>Penyidik & Detektif Aktif</h3>
+                    <p>5</p>
+                </article>
+            </div>
         </section>
 
         <section>
-            <h2>Ringkasan</h2>
-            <article>
-                <h3>Total Buku</h3>
-                <p>12</p>
-            </article>
-            <article>
-                <h3>Total Anggota</h3>
-                <p>8</p>
-            </article>
-            <article>
-                <h3>Sedang Dipinjam</h3>
-                <p>3</p>
-            </article>
+            <h2>Prosedur Pengarsipan</h2>
+            <p class="hero-subtitle">Seluruh entri data dikelola secara tersentralisasi. Gunakan menu navigasi di atas
+                untuk mengakses direktori tersangka maupun personel divisi khusus .</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="suspects/list.html" class="btn-primary" style="text-decoration: none;">Buka Arsip Tersangka</a>
+                <a href="investigators/list.html" class="btn-secondary">Lihat Direktori Penyidik</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 6</p>
+        <p>&copy; 2026 Gotham City Police Department </p>
     </footer>
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>

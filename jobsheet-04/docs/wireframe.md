@@ -1,78 +1,145 @@
-# Dokumentasi Perancangan UI/UX - Arsip Kriminal Kota Gotham
+# Wireframe & User Flow — Crime Records System (GCPD)
 
-Sub-CPMK: Merancang antarmuka dan alur pengguna sistem investigasi kriminal berbasis web.
+Sub-CPMK: Merancang UI/UX aplikasi sistem informasi kriminal dan investigasi.
 
-Dokumen ini memuat perancangan wireframe dan alur pengguna untuk sistem dokumentasi tindak pidana kepolisian Kota Gotham, yang mencakup modul Beranda Operasional, Berkas Perkara, Pendaftaran Perkara, dan Direktori Detektif.
+Dokumen ini merancang wireframe dan alur interaksi pengguna (*user flow*) untuk Crime Records System (Gotham City Police Department - ) sebelum diimplementasikan pada Jobsheet 5 (interaktivitas DOM/JS) dan Jobsheet 6 (komunikasi data asinkron JSON).
 
-## Peran Pengguna
-- Publik: Dapat melihat ringkasan pengumuman perkara terbuka dan informasi umum.
-- Detektif dan Perwira Investigasi: Memiliki otorisasi untuk menginput data perkara, memperbarui profil ancaman, dan mengelola penugasan personel.
+---
 
-## Alur Pengguna: Pendaftaran Perkara Pidana Baru
+## 1. Aktor Sistem
 
+- **Tamu / Personel Tidak Terautentikasi**: Hanya dapat mengakses landing page publik atau dialihkan ke halaman login.
+- **Patrol Officer / Petugas Lapangan**: Dapat melihat direktori penyidik aktif dan meninjau daftar tersangka terdata.
+- **Detektif / Penyidik (Investigator)**: Memiliki hak akses penuh untuk melakukan registrasi tersangka baru, memperbarui berkas perkara, dan mengelola direktori kasus.
+- **Commissioner / Kepala Divisi**: Memiliki otoritas manajemen tertinggi dan pemantauan statistik kejahatan kota secara menyeluruh.
+
+---
+
+## 2. Alur Pengguna (User Flow)
+
+### A. Alur Registrasi Berkas Tersangka Baru
 ```
-[Halaman Beranda] -> [Pilih tombol "Tambah Perkara"]
-        -> [Mengisi Nama Subjek, Alias, dan Nomor Perkara]
-        -> [Menentukan Klasifikasi Kejahatan dan Tingkat Ancaman]
-        -> [Menyimpan Berkas] -> [Tercatat pada Arsip Aktif]
+[Petugas Login] 
+       │
+       ▼
+[Dashboard Investigasi] 
+       │
+       ▼ (Pilih menu "Tambah Tersangka")
+[Form Registrasi Tersangka]
+       │
+       ├─► Isi No. Identitas (Wajib, Format GTH-ID-XXXXX)
+       ├─► Isi Nama Lengkap / Alias (Wajib)
+       ├─► Pilih Tanggal Lahir & Gender
+       └─► Masukkan Alamat / Lokasi Terakhir
+       │
+       ▼ (Klik "Simpan Berkas")
+[Validasi Client-Side] ──(Jika tidak valid)──► Tampilkan Error Inline
+       │ (Valid)
+       ▼
+[Data Tersimpan ke Arsip] ──► Redirect ke [Daftar Tersangka]
 ```
 
-## Alur Pengguna: Penugasan Personel Detektif
-
+### B. Alur Penyelidikan & Penugasan Penyidik
 ```
-[Halaman Beranda] -> [Masuk Menu "Personel Detektif"]
-        -> [Melihat Daftar Detektif dan Status Dinas]
-        -> [Pilih Detektif yang Bertugas]
-        -> [Perbarui Wilayah Penugasan dan Kanal Komunikasi]
-        -> [Simpan Pembaruan Data]
+[Dashboard] ──► [Daftar Tersangka] ──► [Pilih Tersangka]
+                      │
+                      ▼
+            [Pilih Penyidik dari Direktori]
+                      │
+                      ▼
+            [Status Tersangka Diperbarui: Dalam Investigasi]
 ```
 
-## Wireframe: Pusat Investigasi Kejahatan (Beranda)
+---
 
+## 3. Wireframe Antarmuka
+
+### Wireframe 1: Halaman Login Personel GCPD (`login.html`)
 ```
 +-------------------------------------------------------------+
-| [GOTHAM] Arsip Kriminal    Beranda | Perkara | Personel     |
-|-------------------------------------------------------------|
-| Pusat Investigasi Kejahatan Gotham                          |
-| [ + Input Perkara Baru ]   [ Direktori Detektif ]           |
+|                      CRIME RECORDS SYSTEM                    |
++-------------------------------------------------------------+
 |                                                             |
-| [ 48 Berkas Aktif ]    [ 16 Detektif ]    [ 32 Ditahan ]    |
+|                +---------------------------+                |
+|                |   PORTAL PERSONEL GCPD    |                |
+|                |  Akses Terbatas Petugas   |                |
+|                |---------------------------|                |
+|                | No. Lencana / Username:   |                |
+|                | [_______________________] |                |
+|                |                           |                |
+|                | Kata Sandi Akses:         |                |
+|                | [***********************] |                |
+|                |                           |                |
+|                | [x] Ingat sesi dinas      |                |
+|                |                           |                |
+|                |     [ MASUK KE SISTEM ]   |                |
+|                |                           |                |
+|                | Bantuan: Divisi Internal  |                |
+|                +---------------------------+                |
 |                                                             |
-| Perkara Prioritas Terkini                                   |
-| Nomor Perkara | Nama Subjek       | Status       | Aksi     |
-| PK-2022-014   | Edward Nashton    | [Kritis]     | [Detail] |
-| PK-2021-089   | Oswald Cobblepot  | [Tinggi]     | [Detail] |
 +-------------------------------------------------------------+
 ```
 
-## Wireframe: Daftar Berkas Perkara Kriminal
-
+### Wireframe 2: Dashboard Investigasi (`index.html`)
 ```
 +-------------------------------------------------------------+
-| Daftar Berkas Perkara Kriminal                              |
-| [ + Input Perkara Baru ]                                    |
+| CRIME RECORDS   [Beranda] [Tersangka] [+ Tambah] [Penyidik] |
++-------------------------------------------------------------+
+|  Pusat Basis Data Kejahatan Gotham City                     |
+|  Sistem manajemen arsip tersangka dan direktori resmi GCPD  |
 |                                                             |
-| Nomor       | Subjek          | Klasifikasi  | Ancaman| Aksi|
-| PK-2022-014 | Edward Nashton  | Terorisme    | Kritis | [..]|
-| PK-2021-089 | Oswald Cobblepot| Penyelundupan| Tinggi | [..]|
+|  +---------------------------+ +--------------------------+ |
+|  | TOTAL TERSANGKA TERDATA   | | PENYIDIK & DETEKTIF AKTIF| |
+|  |           8               | |            5             | |
+|  +---------------------------+ +--------------------------+ |
 +-------------------------------------------------------------+
 ```
 
-## Wireframe: Direktori Personel Detektif
-
+### Wireframe 3: Registrasi Tersangka Baru (`suspects/tambah.html`)
 ```
 +-------------------------------------------------------------+
-| Direktori Personel Detektif Gotham                          |
-| [ + Tambah Personel Baru ]                                  |
+| CRIME RECORDS   [Beranda] [Tersangka] [+ Tambah] [Penyidik] |
++-------------------------------------------------------------+
+|  Registrasi Berkas Tersangka Baru                           |
 |                                                             |
-| Lencana   | Nama Detektif   | Satuan Wilayah | Kanal  | Aksi|
-| LNC-001   | James Gordon    | Satuan Utama   | 142.50 | [..]|
-| LNC-007   | Harvey Bullock  | Kejahatan Berat| 142.75 | [..]|
+|  Nomor Identitas (ID Polisi/Dokumen) :                     |
+|  [ Contoh: GTH-ID-99210                 ]                   |
+|                                                             |
+|  Nama Lengkap / Alias :                                     |
+|  [ Masukkan nama lengkap tersangka      ]                   |
+|                                                             |
+|  Tanggal Lahir :            Jenis Kelamin :                 |
+|  [ YYYY-MM-DD          ]    [ Male / Female / Other ▼ ]     |
+|                                                             |
+|  Alamat / Lokasi Terakhir Terlihat :                        |
+|  [                                     ]                    |
+|  [                                     ]                    |
+|                                                             |
+|  [ SIMPAN BERKAS ]     [ KEMBALI ]                          |
 +-------------------------------------------------------------+
 ```
 
-## Pedoman Tampilan Visual
-- Warna Utama: Merah Pekat Solid (#e50914) untuk aksen border, tombol tindakan, dan penanda penting.
-- Latar Belakang: Hitam Gelap (#0a0a0d) dan Abu Arang Gelap (#121217).
-- Tanpa Gradasi: Seluruh pewarnaan menggunakan warna datar (solid color) untuk menjaga kontras tinggi dan ketegasan visual.
-- Implementasi Berkas: Halaman statis terhubung pada index.html, buku/list.html, buku/tambah.html, dan anggota/list.html.
+### Wireframe 4: Daftar Tersangka dengan Toolbar (`suspects/list.html`)
+```
++-------------------------------------------------------------+
+| CRIME RECORDS   [Beranda] [Tersangka] [+ Tambah] [Penyidik] |
++-------------------------------------------------------------+
+|  Daftar Tersangka                                           |
+|                                                             |
+|  Cari Data Tersangka:                                       |
+|  [ Ketik nama, ID, atau alamat...    ]                      |
+|                                                             |
+|  +--------------------------------------------------------+ |
+|  | ID POLISI  | NAMA TERSANGKA | GENDER | ALAMAT  | AKSI  | |
+|  |------------+----------------+--------+---------+-------| |
+|  | GTH-ID-..  | Jack Napier    | Male   | Monarch | Edit/H| |
+|  | GTH-ID-..  | O. Cobblepot   | Male   | Iceberg | Edit/H| |
+|  +--------------------------------------------------------+ |
++-------------------------------------------------------------+
+```
+
+---
+
+## 4. Konsistensi Desain
+- Tema visual mengusung nuansa *Gotham Tactical Noir* menggunakan palet warna gelap (`#0b0f19`, `#121826`, `#1a2234`) dipadukan dengan aksen emas GCPD (`#f59e0b`) dan biru investigasi (`#38bdf8`).
+- Komponen input, tombol, badge ID, dan tata letak tabel telah disiapkan agar siap diintegrasikan dengan interaktivitas JavaScript pada Jobsheet 5.

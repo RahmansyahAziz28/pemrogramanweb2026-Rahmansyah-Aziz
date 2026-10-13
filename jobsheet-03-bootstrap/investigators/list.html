@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crime Records | Daftar Penyidik (Bootstrap 5)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-gcpd-header">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-gold" href="../index.html">Crime Records System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../suspects/list.html">Daftar Tersangka</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../suspects/tambah.html">Tambah Tersangka</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="list.html">Daftar Penyidik</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <section class="card shadow-sm mb-4 bg-gcpd-card text-light">
+            <div class="card-body">
+                <h2 class="card-title text-gold mb-3">Direktori Penyidik &amp; Detektif</h2>
+
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>No. Lencana</th>
+                                <th>Nama Lengkap</th>
+                                <th>Pangkat</th>
+                                <th>Departemen</th>
+                                <th>Telepon</th>
+                                <th>Email Resmi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge text-bg-warning">GPD-001</span></td>
+                                <td><strong>James Gordon</strong></td>
+                                <td><span class="badge text-bg-secondary">Commissioner</span></td>
+                                <td>Major Crimes Unit</td>
+                                <td>555-0101</td>
+                                <td>gordon@gpd.gotham.gov</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-warning">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge text-bg-warning">GPD-002</span></td>
+                                <td><strong>Harvey Bullock</strong></td>
+                                <td><span class="badge text-bg-secondary">Detective</span></td>
+                                <td>Major Crimes Unit</td>
+                                <td>555-0102</td>
+                                <td>bullock@gpd.gotham.gov</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-warning">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge text-bg-warning">GPD-003</span></td>
+                                <td><strong>Renee Montoya</strong></td>
+                                <td><span class="badge text-bg-secondary">Detective</span></td>
+                                <td>Special Crimes Unit</td>
+                                <td>555-0103</td>
+                                <td>montoya@gpd.gotham.gov</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-warning">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge text-bg-warning">GPD-004</span></td>
+                                <td><strong>Crispus Allen</strong></td>
+                                <td><span class="badge text-bg-secondary">Detective</span></td>
+                                <td>Special Crimes Unit</td>
+                                <td>555-0104</td>
+                                <td>allen@gpd.gotham.gov</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-warning">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge text-bg-warning">GPD-005</span></td>
+                                <td><strong>Sarah Essen</strong></td>
+                                <td><span class="badge text-bg-secondary">Captain</span></td>
+                                <td>Organized Crime Unit</td>
+                                <td>555-0105</td>
+                                <td>essen@gpd.gotham.gov</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-warning">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Hapus</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-3 border-top border-secondary text-secondary">
+        <p class="mb-0">&copy; 2026 Gotham City Police Department  (Bootstrap 5)</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+[
+  { "badge_number": "GPD-001", "full_name": "James Gordon", "rank": "Commissioner", "department": "Major Crimes Unit", "phone": "555-0101", "email": "gordon@gpd.gotham.gov" },
+  { "badge_number": "GPD-002", "full_name": "Harvey Bullock", "rank": "Detective", "department": "Major Crimes Unit", "phone": "555-0102", "email": "bullock@gpd.gotham.gov" },
+  { "badge_number": "GPD-003", "full_name": "Renee Montoya", "rank": "Detective", "department": "Special Crimes Unit", "phone": "555-0103", "email": "montoya@gpd.gotham.gov" },
+  { "badge_number": "GPD-004", "full_name": "Crispus Allen", "rank": "Detective", "department": "Special Crimes Unit", "phone": "555-0104", "email": "allen@gpd.gotham.gov" },
+  { "badge_number": "GPD-005", "full_name": "Sarah Essen", "rank": "Captain", "department": "Organized Crime Unit", "phone": "555-0105", "email": "essen@gpd.gotham.gov" }
+]

@@ -1,16 +1,36 @@
-/* Override kecil di atas Bootstrap agar tetap konsisten dengan warna brand SIMPUS-Mini */
-
-.navbar-brand,
-.nav-link {
-    color: #fff !important;
+/* Override warna dan aksen brand GCPD di Bootstrap */
+body {
+    background-color: #0b0f19;
+    color: #e2e8f0;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: #d9e8f5 !important;
+.bg-gcpd-header {
+    background-color: #121826 !important;
+    border-bottom: 1px solid #27354f;
 }
 
-form button[type="submit"]:hover,
-button[type="submit"]:hover {
-    background-color: #164869 !important;
+.bg-gcpd-card {
+    background-color: #121826 !important;
+    border: 1px solid #27354f !important;
+}
+
+.bg-gcpd-stats {
+    background-color: #1a2234 !important;
+    border: 1px solid #27354f;
+}
+
+.text-gold {
+    color: #f59e0b !important;
+}
+
+.btn-gold {
+    background-color: #f59e0b;
+    color: #0b0f19;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-gold:hover {
+    background-color: #d97706;
+    color: #0b0f19;
 }

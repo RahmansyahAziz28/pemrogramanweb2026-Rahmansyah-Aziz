@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arsip Kriminal - Akses Sistem Investigasi Gotham</title>
+    <title>Crime Records | Akses Sistem Investigasi GCPD</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <a href="index.html" class="brand-container">
-            <span class="brand-badge">GOTHAM</span>
-            <span class="brand-title">Arsip Kriminal</span>
-            <span class="brand-subtitle">Investigasi Kejahatan</span>
-        </a>
+        <h1><span>Crime Records System</span></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
         <nav>
             <ul>
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="buku/list.html">Berkas Perkara</a></li>
-                <li><a href="anggota/list.html">Personel Detektif</a></li>
+                <li><a href="suspects/list.html">Daftar Tersangka</a></li>
+                <li><a href="suspects/tambah.html">Tambah Tersangka</a></li>
+                <li><a href="investigators/list.html">Daftar Penyidik</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -28,32 +28,32 @@
         <div class="auth-wrapper">
             <div class="auth-card">
                 <div class="auth-header">
-                    <h1>Masuk Sistem Investigasi</h1>
-                    <p>Akses terbatas bagi perwira kepolisian dan detektif terdaftar</p>
+                    <h1>Portal Personel GCPD</h1>
+                    <p>Akses terbatas bagi perwira kepolisian dan detektif terdaftar </p>
                 </div>
 
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Verifikasi identitas berhasil. Sesi investigasi aktif.');">
-                    <div class="form-group" style="margin-bottom: 1.15rem;">
-                        <label for="username" class="form-label">Nomor Lencana atau Nama Pengguna</label>
-                        <input type="text" id="username" name="username" class="form-input" placeholder="Contoh: LNC-001 atau jgordon" required autocomplete="username">
+                <form action="index.html" method="get">
+                    <div class="form-group">
+                        <label for="badge_number">Nomor Lencana atau Username</label>
+                        <input type="text" id="badge_number" name="badge_number" placeholder="Contoh: GPD-001 atau jgordon" required autocomplete="username">
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 1rem;">
-                        <label for="password" class="form-label">Kata Sandi Akun</label>
-                        <input type="password" id="password" name="password" class="form-input" placeholder="Masukkan kata sandi dinas" required autocomplete="current-password">
+                    <div class="form-group">
+                        <label for="password">Kata Sandi Akses</label>
+                        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi kedinasan" required autocomplete="current-password">
                     </div>
 
                     <div class="auth-options">
                         <label class="auth-checkbox-label">
-                            <input type="checkbox" name="remember"> Ingat sesi ini
+                            <input type="checkbox" name="remember"> Ingat sesi investigasi
                         </label>
-                        <a href="#">Bantuan Sandi</a>
+                        <a href="#" style="color: var(--accent-blue);">Lupa sandi dinas?</a>
                     </div>
 
                     <button type="submit" class="btn-primary btn-block">Masuk ke Sistem</button>
 
                     <div class="auth-footer">
-                        Kendala akses akun dinas? Hubungi Divisi Pengawasan Internal.
+                        Kendala akses akun dinas? Hubungi Divisi Pengawasan Internal GCPD.
                     </div>
                 </form>
             </div>
@@ -61,7 +61,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Kepolisian Kota Gotham - Divisi Reserse Kriminal. Jobsheet 4.</p>
+        <p>&copy; 2026 Gotham City Police Department  (Jobsheet 4)</p>
     </footer>
 </body>
 

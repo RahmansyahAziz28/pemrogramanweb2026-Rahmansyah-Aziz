@@ -1,9 +1,22 @@
-/* =========================================================
-   ARSIP KRIMINAL GOTHAM — SISTEM INVESTIGASI
-   Tema: The Batman (Noir Crimson & Charcoal, Tanpa Gradient)
-   ========================================================= */
+:root {
+    --bg-main: #0b0f19;
+    --bg-surface: #121826;
+    --bg-card: #1a2234;
+    --bg-hover: #222d44;
+    --border-color: #27354f;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --text-heading: #f8fafc;
+    --accent-gold: #f59e0b;
+    --accent-gold-hover: #d97706;
+    --accent-blue: #38bdf8;
+    --accent-danger: #ef4444;
+    --accent-danger-hover: #dc2626;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --shadow-main: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
 
-/* ===== Reset & Variabel Dasar ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,523 +25,498 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #d8dbe2;
-    background-color: #0a0a0d;
+    background-color: var(--bg-main);
+    color: var(--text-main);
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-a {
-    color: #e50914;
-    text-decoration: none;
-    transition: color 0.15s ease;
-}
-
-a:hover {
-    color: #ff3843;
-    text-decoration: underline;
-}
-
-/* ===== Navigasi & Header ===== */
 header {
-    background-color: #060608;
-    border-bottom: 2px solid #e50914;
-    padding: 0.9rem 2rem;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.brand-container {
-    display: flex;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.brand-badge {
-    background-color: #e50914;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    padding: 0.25rem 0.55rem;
-    border-radius: 3px;
-}
-
-.brand-title {
-    color: #ffffff;
-    font-size: 1.15rem;
+header h1 {
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
-}
-
-.brand-subtitle {
-    color: #727882;
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin-left: 0.25rem;
-}
-
-header nav ul {
-    list-style: none;
+    letter-spacing: 0.5px;
+    color: var(--accent-gold);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    flex-wrap: wrap;
 }
 
-header nav a {
-    color: #a4aab4;
+header h1 span {
+    color: var(--text-heading);
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* ===== Hamburger Menu murni CSS (Checkbox Hack) ===== */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
     font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.45rem 0.85rem;
-    border-radius: 4px;
-    transition: color 0.15s ease, background-color 0.15s ease;
-    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s, background-color 0.2s;
 }
 
-header nav a:hover {
-    color: #ffffff;
-    background-color: #16161d;
-    text-decoration: none;
+nav a:hover,
+nav a.active {
+    color: var(--accent-gold);
+    background-color: rgba(245, 158, 11, 0.1);
 }
 
-header nav a.active {
-    color: #ffffff;
-    background-color: #1b1b24;
-    font-weight: 600;
-}
-
-.nav-login-btn {
-    border: 1px solid #e50914 !important;
-    color: #e50914 !important;
-    padding: 0.35rem 0.85rem !important;
-    font-weight: 600 !important;
-}
-
-.nav-login-btn:hover {
-    background-color: #e50914 !important;
-    color: #ffffff !important;
-}
-
-/* ===== Kontainer Halaman ===== */
 main {
-    max-width: 1080px;
+    flex: 1;
+    max-width: 1200px;
     width: 100%;
     margin: 2rem auto;
     padding: 0 1.5rem;
-    flex: 1;
 }
 
-/* ===== Header Banner Halaman ===== */
-.page-banner {
-    background-color: #121217;
-    border: 1px solid #202028;
-    border-radius: 6px;
-    padding: 1.5rem 1.75rem;
-    margin-bottom: 1.5rem;
+section {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-main);
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    color: var(--text-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
 }
 
-.page-banner-info h1 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 0.25rem;
-    letter-spacing: -0.01em;
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.page-banner-info p {
-    color: #838994;
-    font-size: 0.9rem;
-}
-
-.page-banner-actions {
-    display: flex;
-    gap: 0.75rem;
-}
-
-/* ===== Tombol Komponen ===== */
-.btn-primary {
-    background-color: #e50914;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.55rem 1.15rem;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: background-color 0.15s ease;
-}
-
-.btn-primary:hover {
-    background-color: #b80710;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.btn-secondary {
-    background-color: #1a1a22;
-    color: #d0d4de;
-    font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.55rem 1rem;
-    border-radius: 4px;
-    border: 1px solid #2e2e3a;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.btn-secondary:hover {
-    background-color: #242430;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* ===== Kartu Statistik Dashboard ===== */
+/* ===== Grid Kartu Statistik Responsif ===== */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 1.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.stat-card {
-    background-color: #121217;
-    border: 1px solid #202028;
-    border-left: 4px solid #e50914;
-    border-radius: 6px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.stats-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    text-align: left;
 }
 
-.stat-title {
-    font-size: 0.8rem;
+.stats-card h3 {
+    color: var(--text-muted);
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #838994;
-    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-.stat-number {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 0.25rem;
+.stats-card p {
+    color: var(--text-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
 }
 
-.stat-detail {
-    font-size: 0.825rem;
-    color: #646a74;
-}
-
-/* ===== Card Konten Umum ===== */
-.card-panel {
-    background-color: #121217;
-    border: 1px solid #202028;
-    border-radius: 6px;
-    padding: 1.5rem;
-    margin-bottom: 1.75rem;
-}
-
-.card-panel-header {
+/* ===== Toolbar & Pencarian ===== */
+.toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
-    margin-bottom: 1.25rem;
-    border-bottom: 1px solid #1c1c24;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.card-panel-header h2 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #ffffff;
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+    max-width: 450px;
 }
 
-.card-panel-header span {
-    font-size: 0.85rem;
-    color: #727882;
+.search-box label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* ===== Tabel Modern ===== */
-.table-wrapper {
+.search-box input {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* ===== Tabel Responsif ===== */
+.table-responsive {
+    width: 100%;
     overflow-x: auto;
-    border: 1px solid #202028;
-    border-radius: 4px;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.925rem;
     text-align: left;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 thead {
-    background-color: #0a0a0e;
-    border-bottom: 2px solid #262632;
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--border-color);
 }
 
 th {
-    padding: 0.85rem 1.1rem;
-    font-size: 0.775rem;
+    padding: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #9298a4;
-    font-weight: 600;
 }
 
 td {
-    padding: 0.9rem 1.1rem;
-    border-bottom: 1px solid #1a1a22;
-    color: #d0d4de;
-    vertical-align: middle;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+tbody tr {
+    transition: background-color 0.15s;
 }
 
 tbody tr:hover {
-    background-color: #17171e;
+    background-color: var(--bg-hover);
 }
 
-tbody tr:last-child td {
-    border-bottom: none;
+/* Badge & Tag Styling */
+.badge-id {
+    font-family: monospace;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: rgba(56, 189, 248, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-/* ===== Badge Status Taktis (Solid, Tanpa Gradient) ===== */
-.status-tag {
-    display: inline-block;
-    padding: 0.2rem 0.55rem;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
+.badge-gold {
+    font-family: monospace;
+    font-weight: 700;
+    color: var(--accent-gold);
+    background-color: rgba(245, 158, 11, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
-.tag-red {
-    background-color: #4c0c0c;
-    color: #fca5a5;
-    border: 1px solid #7f1d1d;
+.badge-tag {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background-color: var(--bg-card);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
 }
 
-.tag-amber {
-    background-color: #452604;
-    color: #fde047;
-    border: 1px solid #78350f;
-}
-
-.tag-blue {
-    background-color: #0f244a;
-    color: #93c5fd;
-    border: 1px solid #1e40af;
-}
-
-.tag-green {
-    background-color: #0c331a;
-    color: #86efac;
-    border: 1px solid #166534;
-}
-
-/* ===== Tombol Aksi Tabel ===== */
 .action-buttons {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.5rem;
 }
 
-.btn-table {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.8rem;
+.btn-action,
+.btn-hapus {
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
     font-weight: 500;
-    border-radius: 3px;
-    border: 1px solid #2b2b36;
-    background-color: #181820;
-    color: #cfd2dc;
     cursor: pointer;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.btn-table:hover {
-    background-color: #262632;
-    color: #ffffff;
+.btn-action {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border-color: var(--border-color);
 }
 
-.btn-table-danger {
-    border-color: #4c0c0c;
-    background-color: #240808;
-    color: #fca5a5;
+.btn-action:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
 }
 
-.btn-table-danger:hover {
-    background-color: #4c0c0c;
-    color: #ffffff;
+.btn-hapus {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--accent-danger);
+    border-color: rgba(239, 68, 68, 0.2);
 }
 
-/* ===== Form Layout (Grid 2 Kolom) ===== */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.btn-hapus:hover {
+    background-color: var(--accent-danger);
+    color: #fff;
+}
+
+/* ===== Form Styling ===== */
+form {
+    display: flex;
+    flex-direction: column;
     gap: 1.25rem;
+    max-width: 600px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0.5rem;
 }
 
-.form-group-full {
-    grid-column: 1 / -1;
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
-.form-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #b8bcc6;
-}
-
-.form-input,
-.form-select,
-.form-textarea {
-    width: 100%;
-    padding: 0.65rem 0.85rem;
-    background-color: #0a0a0e;
-    border: 1px solid #242430;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 0.925rem;
-    font-family: inherit;
-    transition: border-color 0.15s ease;
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
     outline: none;
-    border-color: #e50914;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-textarea {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+.form-group textarea {
+    min-height: 100px;
     resize: vertical;
-    min-height: 80px;
 }
 
-.form-footer {
-    grid-column: 1 / -1;
+.form-actions {
     display: flex;
-    gap: 0.75rem;
-    margin-top: 1rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid #1c1c24;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-/* ===== Login Card Layout ===== */
+.btn-primary {
+    background-color: var(--accent-gold);
+    color: #0b0f19;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold-hover);
+}
+
+.btn-secondary {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-hover);
+}
+
+/* ===== Auth / Login Styling ===== */
 .auth-wrapper {
-    max-width: 420px;
-    margin: 3rem auto;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
 }
 
 .auth-card {
-    background-color: #121217;
-    border: 1px solid #202028;
-    border-top: 3px solid #e50914;
-    border-radius: 6px;
-    padding: 2.25rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: var(--shadow-main);
 }
 
 .auth-header {
     text-align: center;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
 }
 
 .auth-header h1 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 0.35rem;
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .auth-header p {
-    font-size: 0.875rem;
-    color: #7a808c;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .auth-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1.5rem;
     font-size: 0.85rem;
-    color: #8a909a;
-    margin: 1.25rem 0 1.5rem;
+    color: var(--text-muted);
 }
 
 .auth-checkbox-label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
     cursor: pointer;
-}
-
-.btn-block {
-    width: 100%;
-    justify-content: center;
-    padding: 0.75rem;
-    font-size: 0.95rem;
 }
 
 .auth-footer {
     text-align: center;
-    font-size: 0.85rem;
-    color: #666c76;
     margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
 }
 
-/* ===== Footer ===== */
-footer {
-    background-color: #060608;
-    border-top: 1px solid #17171e;
-    padding: 1.5rem 2rem;
+.btn-block {
+    width: 100%;
     text-align: center;
-    color: #585d66;
-    font-size: 0.825rem;
 }
 
-/* ===== Mobile & Breakpoints ===== */
+footer {
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    padding: 1.25rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* ===== Responsive Breakpoints ===== */
 @media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
+    header {
+        flex-wrap: wrap;
+        padding: 1rem;
+        position: relative;
     }
 
-    .form-grid {
-        grid-template-columns: 1fr;
+    .nav-toggle-label {
+        display: block;
     }
 
-    .page-banner {
+    nav {
+        width: 100%;
+        display: none;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    nav ul {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
     }
 
-    header {
-        padding: 0.85rem 1.25rem;
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
 }

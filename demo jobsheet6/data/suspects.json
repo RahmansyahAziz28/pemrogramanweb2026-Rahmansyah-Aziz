@@ -1,0 +1,10 @@
+[
+  { "identification_number": "GTH-ID-77421", "full_name": "Jack Napier", "date_of_birth": "1975-04-01", "gender": "Male", "address": "221 Monarch Playing Card Co., Gotham" },
+  { "identification_number": "GTH-ID-88113", "full_name": "Oswald Cobblepot", "date_of_birth": "1969-09-19", "gender": "Male", "address": "Iceberg Lounge, Diamond District" },
+  { "identification_number": "GTH-ID-55678", "full_name": "Edward Nygma", "date_of_birth": "1980-10-02", "gender": "Male", "address": "14 Puzzle Lane, Midtown Gotham" },
+  { "identification_number": "GTH-ID-39201", "full_name": "Victor Zsasz", "date_of_birth": "1978-03-15", "gender": "Male", "address": "No Fixed Address, The Narrows" },
+  { "identification_number": "GTH-ID-44501", "full_name": "Roman Sionis", "date_of_birth": "1972-06-08", "gender": "Male", "address": "Sionis Industries, East Gotham" },
+  { "identification_number": "GTH-ID-20034", "full_name": "Sal Maroni", "date_of_birth": "1965-11-23", "gender": "Male", "address": "Maroni Restaurant, Little Italy" },
+  { "identification_number": "GTH-ID-61780", "full_name": "Thomas Blake", "date_of_birth": "1983-07-30", "gender": "Male", "address": "Gotham Zoo Staff Quarters" },
+  { "identification_number": "GTH-ID-UNKN1", "full_name": "Unknown Subject", "date_of_birth": "-", "gender": "Male", "address": "Unknown" }
+]

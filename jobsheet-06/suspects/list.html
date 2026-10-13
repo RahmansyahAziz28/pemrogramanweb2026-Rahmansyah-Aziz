@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Crime Records | Daftar Tersangka</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1> <span>Crime Records System</span></h1>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html" class="active">Daftar Tersangka</a></li>
+                <li><a href="tambah.html">Tambah Tersangka</a></li>
+                <li><a href="../investigators/list.html">Daftar Penyidik</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Daftar Tersangka</h2>
+            <div class="toolbar">
+                <div class="search-box">
+                    <label for="search-input">Cari Data Tersangka</label>
+                    <input type="text" id="search-input" placeholder="Ketik nama, ID, atau alamat...">
+                </div>
+                <button type="button" id="btn-reload" class="btn-reload">&#x21bb; Muat Ulang Data</button>
+            </div>
+            <p id="loading-indicator" style="display:none;">Memuat arsip data tersangka...</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. Identitas</th>
+                            <th>Nama Lengkap</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Gender</th>
+                            <th>Alamat Terakhir</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gotham City Police Department </p>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/suspects.js"></script>
+</body>
+
+</html>
