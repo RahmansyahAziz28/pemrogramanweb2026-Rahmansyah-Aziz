@@ -1,12 +1,13 @@
 # Jobsheet 4 — UI/UX Design (Crime Records System)
 
-Sub-CPMK: Merancang UI/UX aplikasi proyek investigasi kriminal.
+Sub-CPMK: Merancang UI/UX aplikasi (proyek).
 
-## Penyesuaian Tema & Fitur
-- **Tema:** Crime Records System (Gotham City Police Department) — Modul Berkas Tersangka (*Suspects*), Direktori Penyidik (*Investigators*), dan Autentikasi Personel (*Login*).
-- **Halaman Login:** Penambahan [login.html](login.html) sebagai purwarupa portal login personel kepolisian dan detektif GCPD.
-- **Rancangan Wireframe & User Flow:** Dokumen [docs/wireframe.md](docs/wireframe.md) yang merinci rancangan tata letak teks (*wireframe*) dan alur pengguna (*user flow*) untuk registrasi tersangka, penugasan penyidik, dan pemantauan kasus.
-- **Keterpaduan Desain:** Desain antarmuka konsisten dengan Jobsheet 3 menggunakan palet warna *Gotham Tactical Noir* (gelap dengan aksen emas GCPD).
+## Perubahan dari Jobsheet 3
+- Halaman HTML dan tata letak CSS tetap sama persis dengan Jobsheet 3 (Beranda, Daftar Tersangka, Tambah Tersangka, dan Daftar Penyidik).
+- Penambahan dokumen rancangan [docs/wireframe.md](docs/wireframe.md): wireframe teks dan *user flow* untuk alur fitur investigasi yang akan dibangun ke depan (Portal Login Personel, Dashboard Investigasi GCPD, Alur Penugasan Penyidik, dan Penutupan Berkas Kasus).
 
 ## Cara Menjalankan
-Buka `index.html` atau `login.html` langsung di peramban web (*browser*).
+Sama seperti Jobsheet 3 — buka [index.html](index.html) langsung di peramban web (*browser*).
+
+## Catatan
+Dokumen [docs/wireframe.md](docs/wireframe.md) menjadi acuan struktur dan alur antarmuka yang diimplementasikan secara bertahap pada jobsheet berikutnya (interaktivitas DOM di Jobsheet 5, komunikasi asinkron Fetch API di Jobsheet 6, serta autentikasi login dan basis data di Jobsheet 10).

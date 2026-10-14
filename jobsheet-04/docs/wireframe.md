@@ -54,7 +54,7 @@ Dokumen ini merancang wireframe dan alur interaksi pengguna (*user flow*) untuk 
 
 ## 3. Wireframe Antarmuka
 
-### Wireframe 1: Halaman Login Personel GCPD (`login.html`)
+### Wireframe 1: Halaman Login Personel GCPD
 ```
 +-------------------------------------------------------------+
 |                      CRIME RECORDS SYSTEM                    |
